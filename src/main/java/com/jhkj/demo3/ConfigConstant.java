@@ -7,4 +7,5 @@ public class ConfigConstant {
 
     public static final String HTTP_URL="http://cgi-test.lingqiancai.cc";
     public static final String HTTP_GETTOKEN="/cgi-api/v1/getSignKey";
+    public static final String HTTP_CREATELOTTERYEX="/cgi-api/v1/createLotteryEx";
 }
