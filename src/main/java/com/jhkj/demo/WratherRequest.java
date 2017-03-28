@@ -26,7 +26,6 @@ public class WratherRequest {
         WeatherResponse<WeatherInfo>infoWeatherResponse =new WeatherResponse<WeatherInfo>();
         try {
             HttpResponse response=httpClient.execute(get);
-
             if (response.getStatusLine().getStatusCode()==200){
                 String result= EntityUtils.toString(response.getEntity(),"utf-8");
                 System.out.println("String"+result);

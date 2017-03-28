@@ -8,15 +8,15 @@ import junit.framework.TestCase;
 public class UtilTest extends TestCase {
 
     public void testGetTimeStamp() throws Exception {
-        System.out.println(Util.getTimeStamp());
+        System.out.println(LotteryUtil.getTimeStamp());
     }
 
     public void testGetNonceStr() throws Exception {
-        System.out.println(Util.getNonceStr(32));
+        System.out.println(LotteryUtil.getNonceStr(32));
     }
 
 
     public void testGetSignKey()throws Exception{
-        //System.out.println(Util.getSignKey());
+        //System.out.println(LotteryUtil.getSignKey());
     }
 }
