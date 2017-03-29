@@ -22,9 +22,9 @@ public class HttpClientService implements IHttpClientService {
     public HttpClientService() {
     }
 
+
     public JSONObject execute(String urlName)throws Exception{
 
-        //logger.info("httpURL:{}",urlName);
         System.out.println("httpURL:"+urlName);
         httpClient=new DefaultHttpClient();
         post=new HttpPost(urlName);

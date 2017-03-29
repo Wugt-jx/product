@@ -36,7 +36,6 @@ public class LotteryUtil {
 
     protected static String getSign(String str,String key){
         str=str+"&key="+key;
-        //logger.info("signtemp:{}",str);
         System.out.println("signtemp:"+str);
         return SecureUtil.md5(str,"utf-8").toUpperCase();
     }

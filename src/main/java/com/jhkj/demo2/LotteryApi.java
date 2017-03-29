@@ -436,7 +436,7 @@ public class LotteryApi implements ILotteryApi {
         if (retcallUrl==null){
             throw new NullPointerException("retcallUrl is null");
         }
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETCUSTOMERWINBALANCE_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_CREATEADVANCETOKEN_URL+"?");
         String params="amount="+amount+
                 "&appId="+apiConfig.getAppId()+
                 "&bindIP="+bindIP+
@@ -485,7 +485,7 @@ public class LotteryApi implements ILotteryApi {
             }
             showCount=10;
         }
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETCUSTOMERWINBALANCE_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETWITHDRAWALLIST_URL+"?");
         String params="appId="+apiConfig.getAppId()+
                 "&currentPage="+currentPage+
                 "&customerId="+customerId+
