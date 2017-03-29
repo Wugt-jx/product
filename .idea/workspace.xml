@@ -2,34 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38a94f07-2930-4246-8fa4-730c5e035bd8" name="Default" comment="demo2">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConstant.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ILotteryApi.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryApi.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/jhkj/demo2/LotteryApiTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo3/APIConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo3/BaseApi.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo3/ConfigConstant.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo3/LotteryApi.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/jhkj/demo3/BaseApiTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/jhkj/demo3/HttpClientServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo3/APIConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo3/BaseApi.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo3/ConfigConstant.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo3/HttpClientService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo3/IHttpClientService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/jhkj/demo3/BaseApiTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/jhkj/demo3/HttpClientServiceTest.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WratherRequest.class" afterPath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WratherRequest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/jhkj/AppTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/jhkj/AppTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo/WratherRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo/WratherRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/params" afterPath="$PROJECT_DIR$/src/params" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/jhkj/demo2/UtilTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/jhkj/demo2/UtilTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/Util.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo3/HttpClientService.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/HttpClientService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo3/IHttpClientService.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/IHttpClientService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product2.iml" afterPath="$PROJECT_DIR$/product2.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/HttpClientService.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/HttpClientService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ILotteryApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ILotteryApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,8 +40,8 @@
       <file leaf-file-name="HttpClientService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/HttpClientService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="134">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,38 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConfig.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="e#739#740#0" expanded="true" />
-                <element signature="e#767#768#0" expanded="true" />
-                <element signature="e#809#810#0" expanded="true" />
-                <element signature="e#843#844#0" expanded="true" />
-                <element signature="e#877#878#0" expanded="true" />
-                <element signature="e#907#908#0" expanded="true" />
-                <element signature="e#953#954#0" expanded="true" />
-                <element signature="e#991#992#0" expanded="true" />
-                <element signature="e#1026#1027#0" expanded="true" />
-                <element signature="e#1057#1058#0" expanded="true" />
-                <element signature="e#1105#1106#0" expanded="true" />
-                <element signature="e#1145#1146#0" expanded="true" />
-                <element signature="e#1179#1180#0" expanded="true" />
-                <element signature="e#1211#1212#0" expanded="true" />
-                <element signature="e#1259#1260#0" expanded="true" />
-                <element signature="e#1301#1302#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="params" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/params">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+            <state relative-caret-position="826">
+              <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -107,33 +62,8 @@
       <file leaf-file-name="LotteryApi.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="764">
-              <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
-              <folding>
-                <marker date="1490717635215" expanded="false" signature="4588:4599" ph=" { " />
-                <marker date="1490717635215" expanded="false" signature="4611:4617" ph=" }" />
-                <marker date="1490717635215" expanded="false" signature="4718:4729" ph=" { " />
-                <marker date="1490717635215" expanded="false" signature="4741:4747" ph=" }" />
-                <marker date="1490717635215" expanded="false" signature="4842:4853" ph=" { " />
-                <marker date="1490717635215" expanded="false" signature="4865:4871" ph=" }" />
-                <marker date="1490717635215" expanded="false" signature="4914:4925" ph=" { " />
-                <marker date="1490717635215" expanded="false" signature="4937:4943" ph=" }" />
-                <marker date="1490717635215" expanded="false" signature="5013:5024" ph=" { " />
-                <marker date="1490717635215" expanded="false" signature="5036:5042" ph=" }" />
-                <marker date="1490717635215" expanded="false" signature="5106:5117" ph=" { " />
-                <marker date="1490717635215" expanded="false" signature="5129:5135" ph=" }" />
-                <marker date="1490717635215" expanded="false" signature="5383:5394" ph=" { " />
-                <marker date="1490717635215" expanded="false" signature="5406:5412" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ILotteryApi.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ILotteryApi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+            <state relative-caret-position="8517">
+              <caret line="501" column="9" lean-forward="false" selection-start-line="501" selection-start-column="9" selection-end-line="501" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -142,18 +72,18 @@
       <file leaf-file-name="LotteryUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiConstant.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConstant.java">
+      <file leaf-file-name="ILotteryApi.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ILotteryApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="64" lean-forward="false" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+            <state relative-caret-position="477">
+              <caret line="42" column="77" lean-forward="false" selection-start-line="42" selection-start-column="77" selection-end-line="42" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -162,8 +92,8 @@
       <file leaf-file-name="LotteryApiTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/jhkj/demo2/LotteryApiTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -205,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo/WeatherException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/test/Client2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo/WeatherInfo.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/test/Test1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/SignApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/BaseApi.java" />
@@ -224,11 +153,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConstant.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/IHttpClientService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/HttpClientService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryUtil.java" />
         <option value="$PROJECT_DIR$/src/params" />
         <option value="$PROJECT_DIR$/src/test/java/com/jhkj/demo2/LotteryApiTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logger.properties" />
+        <option value="$PROJECT_DIR$/src/main/resource/logger.properties" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/HttpClientService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ILotteryApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryApi.java" />
       </list>
@@ -247,11 +179,53 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="product2" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="product2" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="product2" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -398,8 +372,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -450,7 +422,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -476,7 +448,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -517,14 +489,12 @@
               <option name="myItemId" value="jhkj" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -533,16 +503,25 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../product" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="SearchEverywhereHistoryKey" value="m&#9;ACTION&#9;ActivateMavenProjectsToolWindow&#10;maven&#9;ACTION&#9;ActivateMavenProjectsToolWindow&#10;maven pr&#9;ACTION&#9;ActivateMavenProjectsToolWindow" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.jhkj.demo2" />
       <recent name="com.jhkj.demo3" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\workspace\product2\src\main\java\com\jhkj\conf" />
+      <recent name="F:\workspace\product2\src\main\resource" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspace\product2\src\main\java\com\jhkj\demo2" />
       <recent name="F:\project\product2\src\main\java\com\jhkj\demo2" />
     </key>
   </component>
@@ -957,6 +936,28 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1062,6 +1063,7 @@
       <workItem from="1490539996650" duration="5134000" />
       <workItem from="1490620905293" duration="908000" />
       <workItem from="1490626041121" duration="38079000" />
+      <workItem from="1490752321714" duration="11634000" />
     </task>
     <task id="LOCAL-00001" summary="demo3">
       <created>1490546035449</created>
@@ -1081,39 +1083,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.28 at 23h 36m 22s.xml">
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 10h 34m 48s.xml">
       <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.28 at 23h 37m 33s.xml">
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 10h 36m 22s.xml">
       <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LotteryApiTest_testGetSignKey - 2017.03.28 at 23h 12m 12s.xml">
-      <configuration name="LotteryApiTest.testGetSignKey" configurationId="JUnit" />
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 10h 37m 09s.xml">
+      <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LotteryApiTest_testGetSignKey - 2017.03.28 at 23h 12m 42s.xml">
-      <configuration name="LotteryApiTest.testGetSignKey" configurationId="JUnit" />
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 10h 42m 56s.xml">
+      <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LotteryApiTest_testGetSignKey - 2017.03.28 at 23h 18m 35s.xml">
-      <configuration name="LotteryApiTest.testGetSignKey" configurationId="JUnit" />
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 10h 44m 08s.xml">
+      <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LotteryApiTest_testGetSignKey - 2017.03.28 at 23h 18m 44s.xml">
-      <configuration name="LotteryApiTest.testGetSignKey" configurationId="JUnit" />
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 10h 44m 22s.xml">
+      <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LotteryApiTest_testGetSignKey - 2017.03.28 at 23h 18m 49s.xml">
-      <configuration name="LotteryApiTest.testGetSignKey" configurationId="JUnit" />
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 10h 50m 01s.xml">
+      <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LotteryApiTest_testGetSignKey - 2017.03.28 at 23h 20m 36s.xml">
-      <configuration name="LotteryApiTest.testGetSignKey" configurationId="JUnit" />
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 11h 27m 57s.xml">
+      <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LotteryApiTest_testGetSignKey - 2017.03.28 at 23h 22m 10s.xml">
-      <configuration name="LotteryApiTest.testGetSignKey" configurationId="JUnit" />
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 13h 05m 17s.xml">
+      <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LotteryApiTest_testGetSignKey - 2017.03.28 at 23h 23m 13s.xml">
-      <configuration name="LotteryApiTest.testGetSignKey" configurationId="JUnit" />
+    <history-entry file="LotteryApiTest_testCreateLotteryEx - 2017.03.29 at 13h 58m 16s.xml">
+      <configuration name="LotteryApiTest.testCreateLotteryEx" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99101000" />
+    <option name="totallyTimeSpent" value="110735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1125,32 +1127,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28934819" sideWeight="0.49121523" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28858352" sideWeight="0.49121523" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29411766" sideWeight="0.511713" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2734375" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29386893" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29411766" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1173,34 +1175,8 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/IHttpClientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/APIConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/BaseApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/IHttpClientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/BaseApi.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/IHttpClientService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/test/Test1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1225,13 +1201,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/java/jdk1.7.0_51/src.zip!/java/lang/Cloneable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://D:/java/jdk1.7.0_51/src.zip!/java/lang/Cloneable.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar!/org/apache/http/message/BasicNameValuePair.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -1297,14 +1267,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/BaseApi.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/SignApi.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar!/org/apache/http/NameValuePair.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1312,13 +1274,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/java/jdk1.7.0_51/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="396" column="19" lean-forward="false" selection-start-line="396" selection-start-column="19" selection-end-line="396" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://D:/java/jdk1.7.0_51/src.zip!/java/util/HashMap.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1.jar!/junit/runner/excluded.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1333,54 +1289,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/LotteryApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/HttpClientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/ConfigConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="82" lean-forward="false" selection-start-line="9" selection-start-column="82" selection-end-line="9" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/BaseApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/APIConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/IHttpClientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/LotteryApi.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/HttpClientService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/ConfigConstant.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/BaseApi.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/APIConfig.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo3/IHttpClientService.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/jhkj/demo2/UtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -1401,50 +1315,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/java/jdk1.7.0_51/src.zip!/java/lang/NullPointerException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="68" column="11" lean-forward="false" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
-          <folding>
-            <element signature="e#1616#1617#0" expanded="false" />
-            <element signature="e#1640#1641#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/jhkj/demo3/HttpClientServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="51" lean-forward="true" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/jhkj/demo3/BaseApiTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://D:/java/jdk1.7.0_51/src.zip!/java/lang/NullPointerException.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jhkj/demo3/HttpClientServiceTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jhkj/demo3/BaseApiTest.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.23/fastjson-1.2.23.jar!/com/alibaba/fastjson/JSON.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="135" column="29" lean-forward="false" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/IHttpClientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1456,30 +1336,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/java/jdk1.7.0_51/jre/lib/rt.jar!/sun/security/provider/MD5.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://D:/java/jdk1.7.0_51/jre/lib/rt.jar!/sun/security/provider/MD5.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
           <folding>
-            <element signature="e#189#190#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/HttpClientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#189#190#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1492,77 +1355,192 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#739#740#0" expanded="false" />
+            <element signature="e#767#768#0" expanded="false" />
+            <element signature="e#809#810#0" expanded="false" />
+            <element signature="e#843#844#0" expanded="false" />
+            <element signature="e#877#878#0" expanded="false" />
+            <element signature="e#907#908#0" expanded="false" />
+            <element signature="e#953#954#0" expanded="false" />
+            <element signature="e#991#992#0" expanded="false" />
+            <element signature="e#1026#1027#0" expanded="false" />
+            <element signature="e#1057#1058#0" expanded="false" />
+            <element signature="e#1105#1106#0" expanded="false" />
+            <element signature="e#1145#1146#0" expanded="false" />
+            <element signature="e#1179#1180#0" expanded="false" />
+            <element signature="e#1211#1212#0" expanded="false" />
+            <element signature="e#1259#1260#0" expanded="false" />
+            <element signature="e#1301#1302#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/IHttpClientService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/conf/logger.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/logger.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/HttpClientService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/jhkj/demo2/LotteryApiTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="35" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#877#878#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1026#1027#0" expanded="true" />
-            <element signature="e#1057#1058#0" expanded="true" />
-            <element signature="e#1105#1106#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-            <element signature="e#1301#1302#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ILotteryApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+        <state relative-caret-position="477">
+          <caret line="42" column="77" lean-forward="false" selection-start-line="42" selection-start-column="77" selection-end-line="42" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="764">
-          <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
-          <folding>
-            <marker date="1490717635215" expanded="false" signature="4588:4599" ph=" { " />
-            <marker date="1490717635215" expanded="false" signature="4611:4617" ph=" }" />
-            <marker date="1490717635215" expanded="false" signature="4718:4729" ph=" { " />
-            <marker date="1490717635215" expanded="false" signature="4741:4747" ph=" }" />
-            <marker date="1490717635215" expanded="false" signature="4842:4853" ph=" { " />
-            <marker date="1490717635215" expanded="false" signature="4865:4871" ph=" }" />
-            <marker date="1490717635215" expanded="false" signature="4914:4925" ph=" { " />
-            <marker date="1490717635215" expanded="false" signature="4937:4943" ph=" }" />
-            <marker date="1490717635215" expanded="false" signature="5013:5024" ph=" { " />
-            <marker date="1490717635215" expanded="false" signature="5036:5042" ph=" }" />
-            <marker date="1490717635215" expanded="false" signature="5106:5117" ph=" { " />
-            <marker date="1490717635215" expanded="false" signature="5129:5135" ph=" }" />
-            <marker date="1490717635215" expanded="false" signature="5383:5394" ph=" { " />
-            <marker date="1490717635215" expanded="false" signature="5406:5412" ph=" }" />
-          </folding>
+        <state relative-caret-position="8517">
+          <caret line="501" column="9" lean-forward="false" selection-start-line="501" selection-start-column="9" selection-end-line="501" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>product2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.alibaba:fastjson:1.2.23</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

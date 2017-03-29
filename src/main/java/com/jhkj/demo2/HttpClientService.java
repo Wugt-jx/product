@@ -16,11 +16,16 @@ public class HttpClientService implements IHttpClientService {
     private HttpPost post;
     private HttpResponse response;
 
+    //private static Logger logger= LoggerFactory.getLogger(HttpClientService.class);
+
+
     public HttpClientService() {
     }
 
     public JSONObject execute(String urlName)throws Exception{
-        System.out.println(urlName);
+
+        //logger.info("httpURL:{}",urlName);
+        System.out.println("httpURL:"+urlName);
         httpClient=new DefaultHttpClient();
         post=new HttpPost(urlName);
         response=httpClient.execute(post);
