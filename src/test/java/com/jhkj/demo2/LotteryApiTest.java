@@ -18,4 +18,12 @@ public class LotteryApiTest extends TestCase {
     public void testCreateLotteryEx() throws Exception {
         lotteryApi.createLotteryEx(1,200,"wgtqqqq","adsbvfajabda");
     }
+
+    public void testgetCurrentIssue() throws Exception {
+        lotteryApi.getCurrentIssue(201);
+    }
+
+    public void testgetAwardInfoEx() throws Exception {
+        lotteryApi.getAwardInfoEx("",1,10);
+    }
 }

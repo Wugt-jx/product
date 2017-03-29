@@ -21,13 +21,7 @@ public class LotteryApi implements ILotteryApi {
      * @return  jsonObject
      */
     public JSONObject getSignKey() throws LotteryException {
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig is null");
-        }
-
+        isNull();
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETGISN_URL+"?");
         String params="appId="+apiConfig.getAppId()+
                 "&nonceStr="+apiConfig.getNonceStr()+
@@ -40,7 +34,6 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-
         System.out.println(result.toString());
         return result;
     }
@@ -55,15 +48,8 @@ public class LotteryApi implements ILotteryApi {
      * @return  jsonObject
      */
     public JSONObject createLotteryEx(int quantity, int amount, String customerId, String orderNo) throws LotteryException {
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig or field is null");
-        }
-        if (quantity>10||quantity<1){
-            throw new LotteryException("quantity must between 1 and 10");
-        }
+        isNull();
+        if (quantity>10||quantity<1){throw new LotteryException("quantity must between 1 and 10");}
         if (amount<10){
             throw new LotteryException("amount can't less 10");
         }else if (200<amount&&amount<19800){
@@ -71,12 +57,8 @@ public class LotteryApi implements ILotteryApi {
                 throw new LotteryException("Amount is greater than or equal to 200 and less than or equal to 19800 integer times must be 2");
             }
         }
-        if (customerId==null||customerId.trim().equals("")){
-            throw new NullPointerException("customerId is null!");
-        }
-        if (orderNo==null||customerId.trim().equals("")){
-            throw new NullPointerException("orderNo is null");
-        }
+        if (customerId==null||customerId.trim().equals("")){throw new NullPointerException("customerId is null!");}
+        if (orderNo==null||customerId.trim().equals("")){throw new NullPointerException("orderNo is null");}
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_CREATELOTTERYEX_URL+"?");
         String params="amount="+amount+
                 "&appId="+apiConfig.getAppId()+
@@ -86,7 +68,6 @@ public class LotteryApi implements ILotteryApi {
                 "&quantity="+quantity+
                 "&timestamp="+apiConfig.getTimestamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
-
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
         try {
@@ -108,25 +89,15 @@ public class LotteryApi implements ILotteryApi {
      * @return  jsonObject
      */
     public JSONObject getAwardInfoEx(String issue, int currentPage, int showCount) throws LotteryException{
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig or field is null");
-        }
-        if (issue==null||issue.trim().equals("")){
-            issue="";
-        }
-        if (currentPage<1){
-            currentPage=1;
-        }
+        isNull();
+        if (issue==null||issue.trim().equals("")){issue="";}
+        if (currentPage<1){currentPage=1;}
         if (showCount<1){
             if (showCount>20){
                 throw new LotteryException("showCount can't  greater than 20");
             }
             showCount=10;
         }
-
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETAWARDINFOEX_URL+"?");
         String params="appId="+apiConfig.getAppId()+
                         "&currentPage="+currentPage+
@@ -153,18 +124,9 @@ public class LotteryApi implements ILotteryApi {
      * @return  jsonObject
      */
     public JSONObject getIssue(String issue, int currentPage, int showCount)throws LotteryException {
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig or field is null");
-        }
-        if (issue==null||issue.trim().equals("")){
-            issue="";
-        }
-        if (currentPage<1){
-            currentPage=1;
-        }
+        isNull();
+        if (issue==null||issue.trim().equals("")){issue="";}
+        if (currentPage<1){currentPage=1;}
         if (showCount<1){
             if (showCount>20){
                 throw new LotteryException("showCount can't  greater than 20");
@@ -195,15 +157,8 @@ public class LotteryApi implements ILotteryApi {
      * @return jsonObject
      */
     public JSONObject getCurrentIssue(Integer gameCode)throws LotteryException {
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig or field is null");
-        }
-        if (gameCode==null){
-            throw new NullPointerException("gameCode is null!");
-        }
+        isNull();
+        if (gameCode==null){throw new NullPointerException("gameCode is null!");}
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETCURRENTISSUE_URL+"?");
         String params="appId="+apiConfig.getAppId()+
                 "&gameCode="+gameCode+
@@ -229,18 +184,9 @@ public class LotteryApi implements ILotteryApi {
      * @return jsonObject
      */
     public JSONObject getLotteryListByCustomerId(String customerId, int currentPage, int showCount) throws LotteryException{
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig or field is null");
-        }
-        if (customerId==null){
-            throw new NullPointerException("customerId is null");
-        }
-        if (currentPage<1){
-            currentPage=1;
-        }
+        isNull();
+        if (customerId==null){throw new NullPointerException("customerId is null");}
+        if (currentPage<1){currentPage=1;}
         if (showCount<1){
             if (showCount>20){
                 throw new LotteryException("showCount can't  greater than 20");
@@ -273,24 +219,13 @@ public class LotteryApi implements ILotteryApi {
      * @return jsonObject
      */
     public JSONObject getLotteryListByOrderNo(int currentPage, int showCount, String orderNo) throws LotteryException{
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig or field is null");
-        }
-        if (currentPage<1){
-            currentPage=1;
-        }
+        isNull();
+        if (currentPage<1){currentPage=1;}
         if (showCount<1){
-            if (showCount>20){
-                throw new LotteryException("showCount can't  greater than 20");
-            }
+            if (showCount>20){throw new LotteryException("showCount can't  greater than 20");}
             showCount=10;
         }
-        if (orderNo==null||orderNo.trim().equals("")){
-            throw new NullPointerException("orderNo is null");
-        }
+        if (orderNo==null||orderNo.trim().equals("")){throw new NullPointerException("orderNo is null");}
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETLOTTERYLISTBYORDERNO_URL+"?");
         String params="appId="+apiConfig.getAppId()+
                 "&currentPage="+currentPage+
@@ -315,12 +250,7 @@ public class LotteryApi implements ILotteryApi {
      * @return jsonObject
      */
     public JSONObject getAccountBalance()throws LotteryException{
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig is null");
-        }
+        isNull();
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETACCOUNTBALANCE_URL+"?");
         String params="appId="+apiConfig.getAppId()+
                 "&nonceStr="+apiConfig.getNonceStr()+
@@ -344,25 +274,15 @@ public class LotteryApi implements ILotteryApi {
      * @return jsonObject
      */
     public JSONObject encashToAccount(int amount, String customerId)throws LotteryException {
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig is null");
-        }
-        if (amount<1){
-            throw new LotteryException("amount too less than ");
-        }
-        if (customerId==null){
-            throw new NullPointerException("customerId is null");
-        }
+        isNull();
+        if (amount<1){throw new LotteryException("amount too less than ");}
+        if (customerId==null){throw new NullPointerException("customerId is null");}
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_ENCASHTOACCOUNT_URL+"?");
         String params="amount="+amount+
                 "&appId="+apiConfig.getAppId()+
                 "&customerId="+customerId+
                 "&nonceStr="+apiConfig.getNonceStr()+
                 "&timestamp="+apiConfig.getTimestamp();
-
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -381,21 +301,13 @@ public class LotteryApi implements ILotteryApi {
      * @return  jsonObject
      */
     public JSONObject getCustomerWinBalance(String customerId)throws LotteryException {
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig is null");
-        }
-        if (customerId==null){
-            throw new NullPointerException("customerId is null");
-        }
+        isNull();
+        if (customerId==null){throw new NullPointerException("customerId is null");}
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETCUSTOMERWINBALANCE_URL+"?");
         String params="appId="+apiConfig.getAppId()+
                 "&customerId="+customerId+
                 "&nonceStr="+apiConfig.getNonceStr()+
                 "&timestamp="+apiConfig.getTimestamp();
-
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -418,24 +330,12 @@ public class LotteryApi implements ILotteryApi {
      * @return jsonObject
      */
     public JSONObject createAdvanceToken(String extra, String customerId, String bindIP, int amount, String retcallUrl)throws LotteryException {
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig is null");
-        }
-        if (customerId==null){
-            throw new NullPointerException("customerId is null");
-        }
-        if(bindIP==null){
-            throw new NullPointerException("bindIP is null");
-        }
-        if (amount<100){
-            throw new LotteryException("amount must be greater than 100");
-        }
-        if (retcallUrl==null){
-            throw new NullPointerException("retcallUrl is null");
-        }
+        isNull();
+        if (customerId==null){throw new NullPointerException("customerId is null");}
+        if(bindIP==null){throw new NullPointerException("bindIP is null");}
+        if (amount<100){throw new LotteryException("amount must be greater than 100");}
+        if (retcallUrl==null){throw new NullPointerException("retcallUrl is null");}
+
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_CREATEADVANCETOKEN_URL+"?");
         String params="amount="+amount+
                 "&appId="+apiConfig.getAppId()+
@@ -467,22 +367,11 @@ public class LotteryApi implements ILotteryApi {
      * @return jsonObject
      */
     public JSONObject getWithdrawalList(String customerId, int currentPage, int showCount)throws LotteryException {
-        if (httpClientService==null){
-            throw new NullPointerException("HttpClientService is null");
-        }
-        if (apiConfig.isNull()){
-            throw new NullPointerException("ApiConfig is null");
-        }
-        if (customerId==null){
-            throw new NullPointerException("customerId is null");
-        }
-        if (currentPage<1){
-            currentPage=1;
-        }
+        isNull();
+        if (customerId==null){throw new NullPointerException("customerId is null");}
+        if (currentPage<1){currentPage=1;}
         if (showCount<1){
-            if (showCount>20){
-                throw new LotteryException("showCount can't  greater than 20");
-            }
+            if (showCount>20){throw new LotteryException("showCount can't  greater than 20");}
             showCount=10;
         }
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETWITHDRAWALLIST_URL+"?");
@@ -501,5 +390,14 @@ public class LotteryApi implements ILotteryApi {
             throw new LotteryException(e.getMessage());
         }
         return null;
+    }
+
+
+    /**
+     * 判断当前的apiConfig和httpClientService是否为空
+     */
+    private void isNull(){
+        if (httpClientService==null){throw new NullPointerException("HttpClientService is null");}
+        if (apiConfig==null){throw new NullPointerException("ApiConfig is null");}
     }
 }

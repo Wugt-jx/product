@@ -20,13 +20,6 @@ public class ApiConfig {
     }
 
 
-    public boolean isNull(){
-        if (this.appId==null||this.signkey==null||this.nonceStr==null||this.timestamp==null){
-            return true;
-        }
-        return false;
-    }
-
 
     public String getAppId() {
         return appId;

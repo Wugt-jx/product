@@ -16,13 +16,11 @@ public class HttpClientService implements IHttpClientService {
     private HttpPost post;
     private HttpResponse response;
 
-    //private static Logger logger= LoggerFactory.getLogger(HttpClientService.class);
-
 
     public HttpClientService() {
     }
 
-
+    @SuppressWarnings("deprecation")
     public JSONObject execute(String urlName)throws Exception{
 
         System.out.println("httpURL:"+urlName);
