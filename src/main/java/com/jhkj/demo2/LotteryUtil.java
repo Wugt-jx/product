@@ -9,30 +9,22 @@ import java.util.Random;
  */
 public class LotteryUtil {
 
-    //private static Logger logger= LoggerFactory.getLogger(LotteryUtil.class);
 
     public static Long getTimeStamp(){
         return System.currentTimeMillis()/1000;
     }
 
-    public static String getNonceStr(int length){
+    public static String getNonceStr(){
         String base = "abcdefghijklmnopqrstuvwxyz0123456789";
         Random random = new Random();
         StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < 32; i++) {
             int number = random.nextInt(base.length());
             sb.append(base.charAt(number));
         }
         return sb.toString();
     }
 
-    public static String headUrl(ApiConfig apiConfig){
-        String headUrl="sign="+apiConfig.getSignkey()+"&"
-                +"appId="+apiConfig.getAppId()+"&"
-                +"nonceStr="+apiConfig.getNonceStr()+"&"
-                +"timestamp="+apiConfig.getTimestamp();
-        return headUrl;
-    }
 
     protected static String getSign(String str,String key){
         str=str+"&key="+key;

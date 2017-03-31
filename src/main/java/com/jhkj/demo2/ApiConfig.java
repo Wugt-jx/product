@@ -6,20 +6,16 @@ package com.jhkj.demo2;
  */
 public class ApiConfig {
 
-    private String  appId;                  //appId
-    private String  signkey;                   //签名
-    private String  nonceStr;               //随机生成字符串
-    private Long  timestamp;                //时间戳
+    private String appId;
+    private String signkey;
 
-
-    public ApiConfig(String appId,String signkey) {
-        this.appId=appId;
-        this.nonceStr= LotteryUtil.getNonceStr(32);
-        this.timestamp= LotteryUtil.getTimeStamp();
-        this.signkey=signkey;
+    public ApiConfig(String appId, String signkey) {
+        this.appId = appId;
+        this.signkey = signkey;
     }
 
-
+    public ApiConfig() {
+    }
 
     public String getAppId() {
         return appId;
@@ -35,31 +31,5 @@ public class ApiConfig {
 
     public void setSignkey(String signkey) {
         this.signkey = signkey;
-    }
-
-    public String getNonceStr() {
-        return nonceStr;
-    }
-
-    public void setNonceStr(String nonceStr) {
-        this.nonceStr = nonceStr;
-    }
-
-    public Long getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    @Override
-    public String toString() {
-        return "ApiConfig{" +
-                "appId='" + appId + '\'' +
-                ", sign='" + signkey + '\'' +
-                ", nonceStr='" + nonceStr + '\'' +
-                ", timestamp=" + timestamp +
-                '}';
     }
 }

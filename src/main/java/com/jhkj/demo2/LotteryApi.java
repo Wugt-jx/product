@@ -13,7 +13,7 @@ public class LotteryApi implements ILotteryApi {
     public LotteryApi(ApiConfig apiConfig){
         this.apiConfig=apiConfig;
         httpClientService=new HttpClientService();
-    } ;
+    }
 
 
     /**
@@ -24,8 +24,8 @@ public class LotteryApi implements ILotteryApi {
         isNull();
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETGISN_URL+"?");
         String params="appId="+apiConfig.getAppId()+
-                "&nonceStr="+apiConfig.getNonceStr()+
-                "&timestamp="+apiConfig.getTimestamp();
+                "&nonceStr="+LotteryUtil.getNonceStr()+
+                "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -34,7 +34,6 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        System.out.println(result.toString());
         return result;
     }
 
@@ -63,10 +62,10 @@ public class LotteryApi implements ILotteryApi {
         String params="amount="+amount+
                 "&appId="+apiConfig.getAppId()+
                 "&customerId="+customerId+
-                "&nonceStr="+apiConfig.getNonceStr()+
+                "&nonceStr="+LotteryUtil.getNonceStr()+
                 "&orderNo="+orderNo+
                 "&quantity="+quantity+
-                "&timestamp="+apiConfig.getTimestamp();
+                "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -76,7 +75,6 @@ public class LotteryApi implements ILotteryApi {
             throw new LotteryException(e.getMessage());
         }
 
-        System.out.println(result.toString());
         return result;
     }
 
@@ -90,7 +88,7 @@ public class LotteryApi implements ILotteryApi {
      */
     public JSONObject getAwardInfoEx(String issue, int currentPage, int showCount) throws LotteryException{
         isNull();
-        if (issue==null||issue.trim().equals("")){issue="";}
+
         if (currentPage<1){currentPage=1;}
         if (showCount<1){
             if (showCount>20){
@@ -100,11 +98,13 @@ public class LotteryApi implements ILotteryApi {
         }
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETAWARDINFOEX_URL+"?");
         String params="appId="+apiConfig.getAppId()+
-                        "&currentPage="+currentPage+
-                        "&issue="+issue+
-                        "&nonceStr="+apiConfig.getNonceStr()+
+                        "&currentPage="+currentPage;
+        if (issue!=null&&!issue.trim().equals("")){
+            params+="&issue="+issue;
+        }
+        params+="&nonceStr="+LotteryUtil.getNonceStr()+
                         "&showCount="+showCount+
-                        "&timestamp="+apiConfig.getTimestamp();
+                        "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -113,7 +113,7 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        return null;
+        return result;
     }
 
     /**
@@ -125,7 +125,6 @@ public class LotteryApi implements ILotteryApi {
      */
     public JSONObject getIssue(String issue, int currentPage, int showCount)throws LotteryException {
         isNull();
-        if (issue==null||issue.trim().equals("")){issue="";}
         if (currentPage<1){currentPage=1;}
         if (showCount<1){
             if (showCount>20){
@@ -135,11 +134,14 @@ public class LotteryApi implements ILotteryApi {
         }
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETISSUE_URL+"?");
         String params="appId="+apiConfig.getAppId()+
-                "&currentPage="+currentPage+
-                "&issue="+issue+
-                "&nonceStr="+apiConfig.getNonceStr()+
+                "&currentPage="+currentPage;
+        if (issue!=null&&!issue.trim().equals("")){
+            params=params+"&issue="+issue;
+        }
+
+        params=params+"&nonceStr="+LotteryUtil.getNonceStr()+
                 "&showCount="+showCount+
-                "&timestamp="+apiConfig.getTimestamp();
+                "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -148,7 +150,7 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        return null;
+        return result;
     }
 
     /**
@@ -162,8 +164,8 @@ public class LotteryApi implements ILotteryApi {
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETCURRENTISSUE_URL+"?");
         String params="appId="+apiConfig.getAppId()+
                 "&gameCode="+gameCode+
-                "&nonceStr="+apiConfig.getNonceStr()+
-                "&timestamp="+apiConfig.getTimestamp();
+                "&nonceStr="+LotteryUtil.getNonceStr()+
+                "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -172,7 +174,7 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        return null;
+        return result;
     }
 
 
@@ -197,9 +199,9 @@ public class LotteryApi implements ILotteryApi {
         String params="appId="+apiConfig.getAppId()+
                 "&currentPage="+currentPage+
                 "&customerId="+customerId+
-                "&nonceStr="+apiConfig.getNonceStr()+
+                "&nonceStr="+LotteryUtil.getNonceStr()+
                 "&showCount="+showCount+
-                "&timestamp="+apiConfig.getTimestamp();
+                "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -208,7 +210,7 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        return null;
+        return result;
     }
 
     /**
@@ -229,10 +231,10 @@ public class LotteryApi implements ILotteryApi {
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETLOTTERYLISTBYORDERNO_URL+"?");
         String params="appId="+apiConfig.getAppId()+
                 "&currentPage="+currentPage+
-                "&nonceStr="+apiConfig.getNonceStr()+
+                "&nonceStr="+LotteryUtil.getNonceStr()+
                 "&orderNo="+orderNo+
                 "&showCount="+showCount+
-                "&timestamp="+apiConfig.getTimestamp();
+                "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -241,7 +243,7 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        return null;
+        return result;
     }
 
 
@@ -253,8 +255,8 @@ public class LotteryApi implements ILotteryApi {
         isNull();
         StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETACCOUNTBALANCE_URL+"?");
         String params="appId="+apiConfig.getAppId()+
-                "&nonceStr="+apiConfig.getNonceStr()+
-                "&timestamp="+apiConfig.getTimestamp();
+                "&nonceStr="+LotteryUtil.getNonceStr()+
+                "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -263,8 +265,33 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        return null;
+        return result;
     }
+
+    /**
+     * 查看用户奖金余额
+     * @param customerId 自定义用户Id
+     * @return  jsonObject
+     */
+    public JSONObject getCustomerWinBalance(String customerId)throws LotteryException {
+        isNull();
+        if (customerId==null){throw new NullPointerException("customerId is null");}
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETCUSTOMERWINBALANCE_URL+"?");
+        String params="appId="+apiConfig.getAppId()+
+                "&customerId="+customerId+
+                "&nonceStr="+LotteryUtil.getNonceStr()+
+                "&timestamp="+LotteryUtil.getTimeStamp();
+        String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
+        sb_realUrl.append(params+"&sign="+sign);
+        JSONObject result=null;
+        try {
+            result=this.httpClientService.execute(sb_realUrl.toString());
+        }catch (Exception e){
+            throw new LotteryException(e.getMessage());
+        }
+        return result;
+    }
+
 
     /**
      * 兑付用户奖金额余额值账号余额
@@ -281,8 +308,8 @@ public class LotteryApi implements ILotteryApi {
         String params="amount="+amount+
                 "&appId="+apiConfig.getAppId()+
                 "&customerId="+customerId+
-                "&nonceStr="+apiConfig.getNonceStr()+
-                "&timestamp="+apiConfig.getTimestamp();
+                "&nonceStr="+LotteryUtil.getNonceStr()+
+                "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -291,32 +318,7 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        return null;
-    }
-
-
-    /**
-     * 查看用户奖金余额
-     * @param customerId 自定义用户Id
-     * @return  jsonObject
-     */
-    public JSONObject getCustomerWinBalance(String customerId)throws LotteryException {
-        isNull();
-        if (customerId==null){throw new NullPointerException("customerId is null");}
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETCUSTOMERWINBALANCE_URL+"?");
-        String params="appId="+apiConfig.getAppId()+
-                "&customerId="+customerId+
-                "&nonceStr="+apiConfig.getNonceStr()+
-                "&timestamp="+apiConfig.getTimestamp();
-        String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
-        sb_realUrl.append(params+"&sign="+sign);
-        JSONObject result=null;
-        try {
-            result=this.httpClientService.execute(sb_realUrl.toString());
-        }catch (Exception e){
-            throw new LotteryException(e.getMessage());
-        }
-        return null;
+        return result;
     }
 
 
@@ -344,8 +346,8 @@ public class LotteryApi implements ILotteryApi {
         if (extra!=null&&!extra.trim().equals("")){
             params=params+"&extra="+extra;
         }
-        params=params+"&nonceStr="+apiConfig.getNonceStr()+
-                "&timestamp="+apiConfig.getTimestamp();
+        params=params+"&nonceStr="+LotteryUtil.getNonceStr()+
+                "&timestamp="+LotteryUtil.getTimeStamp();
 
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
@@ -355,7 +357,7 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        return null;
+        return result;
     }
 
 
@@ -368,7 +370,6 @@ public class LotteryApi implements ILotteryApi {
      */
     public JSONObject getWithdrawalList(String customerId, int currentPage, int showCount)throws LotteryException {
         isNull();
-        if (customerId==null){throw new NullPointerException("customerId is null");}
         if (currentPage<1){currentPage=1;}
         if (showCount<1){
             if (showCount>20){throw new LotteryException("showCount can't  greater than 20");}
@@ -378,9 +379,9 @@ public class LotteryApi implements ILotteryApi {
         String params="appId="+apiConfig.getAppId()+
                 "&currentPage="+currentPage+
                 "&customerId="+customerId+
-                "&nonceStr="+apiConfig.getNonceStr()+
+                "&nonceStr="+LotteryUtil.getNonceStr()+
                 "&showCount="+showCount+
-                "&timestamp="+apiConfig.getTimestamp();
+                "&timestamp="+LotteryUtil.getTimeStamp();
         String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
         sb_realUrl.append(params+"&sign="+sign);
         JSONObject result=null;
@@ -389,9 +390,35 @@ public class LotteryApi implements ILotteryApi {
         }catch (Exception e){
             throw new LotteryException(e.getMessage());
         }
-        return null;
+        return result;
     }
 
+    /**
+     *
+     * @param type
+     * @return
+     * @throws LotteryException
+     */
+    public JSONObject getAccountDetail(int type)throws LotteryException{
+        isNull();
+        if (type!=0 &&type!=1){
+            throw new LotteryException("not find type");
+        }
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETACCOUNTDETAIL_URL+"?");
+        String params="appId="+apiConfig.getAppId()+
+                "&nonceStr="+LotteryUtil.getNonceStr()+
+                "&timestamp="+LotteryUtil.getTimeStamp()+
+                "&type="+type;
+        String sign=LotteryUtil.getSign(params,apiConfig.getSignkey());
+        sb_realUrl.append(params+"&sign="+sign);
+        JSONObject result=null;
+        try {
+            result=this.httpClientService.execute(sb_realUrl.toString());
+        }catch (Exception e){
+            throw new LotteryException(e.getMessage());
+        }
+        return result;
+    }
 
     /**
      * 判断当前的apiConfig和httpClientService是否为空

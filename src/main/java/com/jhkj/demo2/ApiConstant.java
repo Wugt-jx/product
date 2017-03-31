@@ -17,4 +17,5 @@ public class ApiConstant {
     public static final String HTTP_GETCUSTOMERWINBALANCE_URL="/cgi-api/v1/getCustomerWinBalance";
     public static final String HTTP_CREATEADVANCETOKEN_URL="/pay/createAdvanceToken";
     public static final String HTTP_GETWITHDRAWALLIST_URL="/pay/getWithdrawalList";
+    public static final String HTTP_GETACCOUNTDETAIL_URL="/cgi-api/v1/getAccountDetail";
 }

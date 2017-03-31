@@ -41,4 +41,6 @@ public interface ILotteryApi {
 
 
     public JSONObject getWithdrawalList(String customerId,int currentPage,int showCount)throws LotteryException;
+
+    public JSONObject getAccountDetail(int type)throws LotteryException;
 }
