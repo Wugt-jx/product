@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38a94f07-2930-4246-8fa4-730c5e035bd8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/product2.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/jhkj/demo2/ApiConfigTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/jhkj/demo2/UtilTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/App.class" afterPath="$PROJECT_DIR$/target/classes/com/jhkj/App.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WeatherException.class" afterPath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WeatherException.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WeatherInfo.class" afterPath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WeatherInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WeatherResponse.class" afterPath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WeatherResponse.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WratherRequest.class" afterPath="$PROJECT_DIR$/target/classes/com/jhkj/demo/WratherRequest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/jhkj/AppTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/jhkj/AppTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product2.iml" afterPath="$PROJECT_DIR$/product2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ApiConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ILotteryApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/ILotteryApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryApi.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/jhkj/demo2/LotteryUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/params" afterPath="$PROJECT_DIR$/src/params" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/jhkj/demo2/LotteryApiTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/jhkj/demo2/LotteryApiTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1076,7 +1062,7 @@
       <workItem from="1490864666494" duration="7722000" />
       <workItem from="1490881952225" duration="14000" />
       <workItem from="1490882708136" duration="2433000" />
-      <workItem from="1490926659905" duration="66000" />
+      <workItem from="1490926659905" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="demo3">
       <created>1490546035449</created>
@@ -1106,7 +1092,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490770964990</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="接口函数完成，等待调试">
+      <created>1490926761994</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1490926761994</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1142,7 +1135,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171496000" />
+    <option name="totallyTimeSpent" value="171524000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
