@@ -1,4 +1,4 @@
-package com.jhkj.demo2;
+package com.jhkj.demo3.constant;
 
 /**
  * Created by wgt on 2017/3/28.
