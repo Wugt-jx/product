@@ -1,9 +1,12 @@
 package com.jhkj.demo3.api;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
 import com.jhkj.demo3.client.*;
 import com.jhkj.demo3.constant.ApiConstant;
-import com.jhkj.demo3.exception.LotteryException;
+import com.jhkj.demo3.exception.LotteryApiException;
+import com.jhkj.demo3.response.*;
 import com.jhkj.demo3.util.LotteryUtil;
 
 
@@ -16,31 +19,37 @@ import java.util.Map;
 public class LotteryApi implements ILotteryApi {
 
     private ApiConfig apiConfig;
-    private IHttpClientService httpClientService;
+    private HttpClientService httpClientService;
     private Map<String,Object>params;
-    private JSONObject result;
+    private String result;
 
     public LotteryApi(ApiConfig apiConfig){
         this.apiConfig=apiConfig;
         httpClientService=new HttpClientService();
-        params=new HashMap<String, Object>();
+        params=new HashMap();
         params.put("appId",apiConfig.getAppId());
     }
+
 
     /**
      * 获取signkey
      * @return  jsonObject
      */
-    public JSONObject getSignKey() throws LotteryException {
-        this.isNull();
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETGISN_URL+"?");
-        params= LotteryUtil.getPostParams(params,apiConfig.getSignkey());
+    public ResultResponse getSignKey() throws LotteryApiException {
+        if (httpClientService==null){throw new NullPointerException("HttpClientService is null");}
+        if (apiConfig==null){throw new NullPointerException("ApiConfig is null");}
+        if (apiConfig.getAppId()==null){throw new NullPointerException("appId is null!");}
+        if (apiConfig.getSecurekey()==null){throw new NullPointerException("secureKey is null");}
+
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETSIGN_URL);
+        params= LotteryUtil.getPostParams(params,apiConfig.getSecurekey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetSignKeyResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
 
@@ -52,19 +61,22 @@ public class LotteryApi implements ILotteryApi {
      * @param orderNo   订单号
      * @return  jsonObject
      */
-    public JSONObject createLotteryEx(int quantity, int amount, String customerId, String orderNo) throws LotteryException {
+    public ResultResponse createLotteryEx(int quantity, int amount, String customerId, String orderNo) throws LotteryApiException {
         this.isNull();
-        if (quantity>10||quantity<1){throw new LotteryException("quantity must between 1 and 10");}
+        if (quantity>10||quantity<1){throw new LotteryApiException("quantity must between 1 and 10");}
         if (amount<10){
-            throw new LotteryException("amount can't less 10");
+            throw new LotteryApiException("amount can't less 10");
         }else if (200<amount&&amount<19800){
             if (amount%2!=0){
-                throw new LotteryException("Amount is greater than or equal to 200 and less than or equal to 19800 integer times must be 2");
+                throw new LotteryApiException("Amount is greater than or equal to 200 and less than or equal to 19800 integer times must be 2");
             }
         }
         if (customerId==null||customerId.trim().equals("")){throw new NullPointerException("customerId is null!");}
-        if (orderNo==null||customerId.trim().equals("")){throw new NullPointerException("orderNo is null");}
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_CREATELOTTERYEX_URL+"?");
+        if (orderNo==null||orderNo.trim().equals("")){throw new NullPointerException("orderNo is null");}
+
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_CREATELOTTERYEX_URL);
+
         params.put("amount",amount);
         params.put("customerId",customerId);
         params.put("orderNo",orderNo);
@@ -73,10 +85,10 @@ public class LotteryApi implements ILotteryApi {
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<CreateLotteryExResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
 
@@ -87,16 +99,15 @@ public class LotteryApi implements ILotteryApi {
      * @param showCount     每页获取记录数，默认为10
      * @return  jsonObject
      */
-    public JSONObject getAwardInfoEx(String issue, int currentPage, int showCount) throws LotteryException{
+    public ResultResponse getAwardInfoEx(String issue, int currentPage, int showCount) throws LotteryApiException {
         this.isNull();
         if (currentPage<1){currentPage=1;}
         if (showCount<1){
-            if (showCount>20){
-                throw new LotteryException("showCount can't  greater than 20");
-            }
+            if (showCount>20){throw new LotteryApiException("showCount can't  greater than 20");}
             showCount=10;
         }
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETAWARDINFOEX_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETAWARDINFOEX_URL);
 
         if (issue!=null&&!issue.trim().equals("")){
             params.put("issue",issue);
@@ -107,10 +118,10 @@ public class LotteryApi implements ILotteryApi {
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetAwardInfoExResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
     /**
@@ -120,16 +131,15 @@ public class LotteryApi implements ILotteryApi {
      * @param showCount     每页获取记录数，默认为10
      * @return  jsonObject
      */
-    public JSONObject getIssue(String issue, int currentPage, int showCount)throws LotteryException {
+    public ResultResponse getIssue(String issue, int currentPage, int showCount)throws LotteryApiException {
         this.isNull();
         if (currentPage<1){currentPage=1;}
         if (showCount<1){
-            if (showCount>20){
-                throw new LotteryException("showCount can't  greater than 20");
-            }
+            if (showCount>20){throw new LotteryApiException("showCount can't  greater than 20");}
             showCount=10;
         }
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETISSUE_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETISSUE_URL);
         if (issue!=null&&!issue.trim().equals("")){
             params.put("issue",issue);
         }
@@ -139,10 +149,10 @@ public class LotteryApi implements ILotteryApi {
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetIssueResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
     /**
@@ -150,19 +160,22 @@ public class LotteryApi implements ILotteryApi {
      * @param gameCode  彩票类型，双色球为201
      * @return jsonObject
      */
-    public JSONObject getCurrentIssue(Integer gameCode)throws LotteryException {
+    public ResultResponse getCurrentIssue(Integer gameCode)throws LotteryApiException {
         this.isNull();
         if (gameCode==null){throw new NullPointerException("gameCode is null!");}
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETCURRENTISSUE_URL+"?");
+
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETCURRENTISSUE_URL);
+
         params.put("gameCode",gameCode);
 
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetCurrentIssueResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
 
@@ -173,17 +186,19 @@ public class LotteryApi implements ILotteryApi {
      * @param showCount     每页获取记录数，默认为10
      * @return jsonObject
      */
-    public JSONObject getLotteryListByCustomerId(String customerId, int currentPage, int showCount) throws LotteryException{
+    public ResultResponse getLotteryListByCustomerId(String customerId, int currentPage, int showCount) throws LotteryApiException {
         this.isNull();
         if (customerId==null){throw new NullPointerException("customerId is null");}
         if (currentPage<1){currentPage=1;}
         if (showCount<1){
             if (showCount>20){
-                throw new LotteryException("showCount can't  greater than 20");
+                throw new LotteryApiException("showCount can't  greater than 20");
             }
             showCount=10;
         }
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETLOTTERYLISTBYCUSTOMERID_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETLOTTERYLISTBYCUSTOMERID_URL);
+
         params.put("customerId",customerId);
         params.put("currentPage",currentPage);
         params.put("showCount",showCount);
@@ -191,10 +206,10 @@ public class LotteryApi implements ILotteryApi {
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetWithdrawalListResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
     /**
@@ -204,15 +219,16 @@ public class LotteryApi implements ILotteryApi {
      * @param orderNo       订单号
      * @return jsonObject
      */
-    public JSONObject getLotteryListByOrderNo(int currentPage, int showCount, String orderNo) throws LotteryException{
+    public ResultResponse getLotteryListByOrderNo(int currentPage, int showCount, String orderNo) throws LotteryApiException {
         this.isNull();
         if (currentPage<1){currentPage=1;}
         if (showCount<1){
-            if (showCount>20){throw new LotteryException("showCount can't  greater than 20");}
+            if (showCount>20){throw new LotteryApiException("showCount can't  greater than 20");}
             showCount=10;
         }
         if (orderNo==null||orderNo.trim().equals("")){throw new NullPointerException("orderNo is null");}
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETLOTTERYLISTBYORDERNO_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETLOTTERYLISTBYORDERNO_URL);
 
         params.put("currentPage",currentPage);
         params.put("showCount",showCount);
@@ -221,10 +237,10 @@ public class LotteryApi implements ILotteryApi {
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetLotteryListResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e.getMessage());
         }
-        return result;
     }
 
 
@@ -232,17 +248,18 @@ public class LotteryApi implements ILotteryApi {
      * 查看账号余额
      * @return jsonObject
      */
-    public JSONObject getAccountBalance()throws LotteryException{
+    public ResultResponse getAccountBalance()throws LotteryApiException {
         this.isNull();
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETACCOUNTBALANCE_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETACCOUNTBALANCE_URL);
 
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetAccountBalance>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
     /**
@@ -250,19 +267,21 @@ public class LotteryApi implements ILotteryApi {
      * @param customerId 自定义用户Id
      * @return  jsonObject
      */
-    public JSONObject getCustomerWinBalance(String customerId)throws LotteryException {
+    public ResultResponse getCustomerWinBalance(String customerId)throws LotteryApiException {
         this.isNull();
         if (customerId==null){throw new NullPointerException("customerId is null");}
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETCUSTOMERWINBALANCE_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETCUSTOMERWINBALANCE_URL);
+
         params.put("customerId",customerId);
 
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetCustomerWinBalanceResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
 
@@ -273,20 +292,22 @@ public class LotteryApi implements ILotteryApi {
      * @param customerId    自定义用户id
      * @return jsonObject
      */
-    public JSONObject encashToAccount(int amount, String customerId)throws LotteryException {
+    public ResultResponse encashToAccount(int amount, String customerId)throws LotteryApiException {
         this.isNull();
-        if (amount<1){throw new LotteryException("amount too less than ");}
+        if (amount<1){throw new LotteryApiException("amount too less than ");}
         if (customerId==null){throw new NullPointerException("customerId is null");}
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_ENCASHTOACCOUNT_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_ENCASHTOACCOUNT_URL);
+
         params.put("amount",amount);
 
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<EncashToAccountResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
 
@@ -299,14 +320,16 @@ public class LotteryApi implements ILotteryApi {
      * @param retcallUrl    回调地址
      * @return jsonObject
      */
-    public JSONObject createAdvanceToken(String extra, String customerId, String bindIP, int amount, String retcallUrl)throws LotteryException {
+    public ResultResponse createAdvanceToken(String extra, String customerId, String bindIP, int amount, String retcallUrl)throws LotteryApiException {
         this.isNull();
         if (customerId==null){throw new NullPointerException("customerId is null");}
         if(bindIP==null){throw new NullPointerException("bindIP is null");}
-        if (amount<100){throw new LotteryException("amount must be greater than 100");}
+        if (amount<100){throw new LotteryApiException("amount must be greater than 100");}
         if (retcallUrl==null){throw new NullPointerException("retcallUrl is null");}
 
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_CREATEADVANCETOKEN_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_CREATEADVANCETOKEN_URL);
+
         if (extra!=null&&!extra.trim().equals("")){
             params.put("extra",extra);
         }
@@ -318,10 +341,10 @@ public class LotteryApi implements ILotteryApi {
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<CreateAdvanceTokenResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
 
@@ -332,14 +355,16 @@ public class LotteryApi implements ILotteryApi {
      * @param showCount     每页显示条数
      * @return jsonObject
      */
-    public JSONObject getWithdrawalList(String customerId, int currentPage, int showCount)throws LotteryException {
+    public ResultResponse getWithdrawalList(String customerId, int currentPage, int showCount)throws LotteryApiException {
         this.isNull();
         if (currentPage<1){currentPage=1;}
         if (showCount<1){
-            if (showCount>20){throw new LotteryException("showCount can't  greater than 20");}
+            if (showCount>20){throw new LotteryApiException("showCount can't  greater than 20");}
             showCount=10;
         }
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETWITHDRAWALLIST_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETWITHDRAWALLIST_URL);
+
         params.put("customerId",customerId);
         params.put("currentPage",currentPage);
         params.put("showCount",showCount);
@@ -347,33 +372,34 @@ public class LotteryApi implements ILotteryApi {
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetWithdrawalListResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
     /**
      *
-     * @param type
+     * @param type 类型 0为入账，1为出账
      * @return
-     * @throws LotteryException
+     * @throws LotteryApiException
      */
-    public JSONObject getAccountDetail(int type)throws LotteryException{
+    public ResultResponse getAccountDetail(int type)throws LotteryApiException {
         isNull();
         if (type!=0 &&type!=1){
-            throw new LotteryException("not find type");
+            throw new LotteryApiException("not find type");
         }
-        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL+ApiConstant.HTTP_GETACCOUNTDETAIL_URL+"?");
+        StringBuilder sb_realUrl=new StringBuilder(ApiConstant.HTTP_URL);
+        sb_realUrl.append(ApiConstant.HTTP_GETACCOUNTDETAIL_URL);
         params.put("type",type);
 
         params=LotteryUtil.getPostParams(params,apiConfig.getSignkey());
         try {
             result=this.httpClientService.execute(sb_realUrl.toString(),params);
+            return JSON.parseObject(result,new TypeReference<ResultResponse<GetAccountDetailResponse>>(){});
         }catch (Exception e){
-            throw new LotteryException(e.getMessage());
+            throw new LotteryApiException(e);
         }
-        return result;
     }
 
     /**
@@ -382,5 +408,7 @@ public class LotteryApi implements ILotteryApi {
     private void isNull(){
         if (httpClientService==null){throw new NullPointerException("HttpClientService is null");}
         if (apiConfig==null){throw new NullPointerException("ApiConfig is null");}
+        if (apiConfig.getAppId()==null){throw new NullPointerException("appId is null!");}
+        if (apiConfig.getSignkey()==null){throw new NullPointerException("signKey is null");}
     }
 }

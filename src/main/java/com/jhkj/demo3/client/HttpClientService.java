@@ -5,7 +5,7 @@ package com.jhkj.demo3.client;
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.jhkj.demo3.exception.LotteryException;
+import com.jhkj.demo3.constant.ApiConstant;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -23,55 +23,51 @@ import java.util.Map;
 /*
  * 利用HttpClient进行post请求的工具类
  */
-public class HttpClientService implements IHttpClientService {
-    private HttpClientBuilder httpClientBuilder = HttpClientBuilder.create();
-    private  CloseableHttpClient httpClient;
-    private  HttpPost httpPost;
-    private  String result;
-    private final String CHARSET = "UTF-8";
+public class HttpClientService {
 
+    private static HttpClientBuilder httpClientBuilder = HttpClientBuilder.create();
 
+    public String execute(String url, Map<String, Object> params) throws Exception {
+        CloseableHttpClient httpClient=httpClientBuilder.build();
 
-    @Override
-    public JSONObject execute(String url, Map<String, Object> params) throws Exception {
-        httpClient=httpClientBuilder.build();
         if (url==null||url.trim().equals("")){
-            throw new NullPointerException("post url is not null");
+            throw new NullPointerException("post url is null");
         }
 
-        try {
-            List<NameValuePair> pairs = null;
-            if (params != null && !params.isEmpty()) {
-                pairs = new ArrayList<NameValuePair>(params.size());
-                for (String key : params.keySet()) {
-                    pairs.add(new BasicNameValuePair(key, params.get(key).toString()));
-                }
+        List<NameValuePair> pairs = null;
+        if (params != null && !params.isEmpty()) {
+            pairs = new ArrayList<NameValuePair>(params.size());
+            for (String key : params.keySet()) {
+                pairs.add(new BasicNameValuePair(key, params.get(key).toString()));
             }
-            httpPost= new HttpPost(url);
-            if (pairs != null && pairs.size() > 0) {
-                httpPost.setEntity(new UrlEncodedFormEntity(pairs, CHARSET));
-            }
-            CloseableHttpResponse response = httpClient.execute(httpPost);
-            int statusCode = response.getStatusLine().getStatusCode();
-            System.out.println(statusCode);
-            if (statusCode != 200) {
-                httpPost.abort();
-                JSONObject json=new JSONObject();
-                json.put("code",statusCode);
-                json.put("msg","The request failed");
-                result = json.toString();
-            }else {
-                HttpEntity entity = response.getEntity();
-                if (entity == null) {
-                    result = "";
-                }
-                result = EntityUtils.toString(entity, CHARSET);
-                EntityUtils.consume(entity);
-                response.close();
-            }
-            return JSONObject.parseObject(result);
-        } catch (Exception e) {
-            throw new LotteryException(e.getMessage());
         }
+
+        HttpPost httpPost= new HttpPost(url);
+        if (pairs != null && pairs.size() > 0) {
+            httpPost.setEntity(new UrlEncodedFormEntity(pairs, ApiConstant.CHARSET));
+        }
+
+        CloseableHttpResponse response = httpClient.execute(httpPost);
+        int statusCode = response.getStatusLine().getStatusCode();
+
+        String result=null;
+        if (statusCode != 200) {
+            httpPost.abort();
+            JSONObject json=new JSONObject();
+            json.put("code",statusCode);
+            json.put("msg","The request failed");
+            result = json.toString();
+        }else {
+            HttpEntity entity = response.getEntity();
+            if (entity != null) {
+                result = EntityUtils.toString(entity, ApiConstant.CHARSET);
+            }else{
+                result="";
+            }
+            EntityUtils.consume(entity);
+            response.close();
+        }
+
+        return result;
     }
 }

@@ -12,14 +12,12 @@ import junit.framework.TestCase;
  */
 public class LotteryApiTest extends TestCase {
 
-    ApiConfig apiConfig=new ApiConfig("12345678912","11589ab946eb6a43336ac035d6f51080");
+    ApiConfig apiConfig=new ApiConfig("12345678912","11589ab946eb6a43336ac035d6f51080","");
     ILotteryApi lotteryApi=new LotteryApi(apiConfig);
 
-    /*
     public void testrew() throws Exception {
         System.out.println("dasvh");
     }
-    */
 
 
 
@@ -31,10 +29,9 @@ public class LotteryApiTest extends TestCase {
 
     //PASS
     /*public void testCreateLotteryEx() throws Exception {
-        JSONObject jsonObject=lotteryApi.createLotteryEx(1,200,"wdsadasgtqqqq","fhdafgjhfb");
+        JSONObject jsonObject=lotteryApi.createLotteryEx(1,200,"wdsadasgtqqqq","gdvkaug");
         System.out.println(jsonObject);
-    }
-*/
+    }*/
 
     //PASS
     public void testgetCurrentIssue() throws Exception {

@@ -1,47 +1,47 @@
 package com.jhkj.demo3.api;
 
-import com.alibaba.fastjson.JSONObject;
-import com.jhkj.demo3.exception.LotteryException;
+import com.jhkj.demo3.exception.LotteryApiException;
+import com.jhkj.demo3.response.ResultResponse;
 
 /**
  * Created by wgt on 2017/3/28.
  */
 public interface ILotteryApi {
 
-    public JSONObject getSignKey() throws LotteryException;
+    public ResultResponse getSignKey() throws LotteryApiException;
 
 
-    public JSONObject createLotteryEx(int quantity, int amount, String customerId, String orderNo) throws LotteryException;
+    public ResultResponse createLotteryEx(int quantity, int amount, String customerId, String orderNo) throws LotteryApiException;
 
 
-    public JSONObject getAwardInfoEx(String issue, int currentPage, int showCount)throws LotteryException;
+    public ResultResponse getAwardInfoEx(String issue, int currentPage, int showCount)throws LotteryApiException;
 
 
-    public JSONObject getIssue(String issue, int currentPage, int showCount)throws LotteryException;
+    public ResultResponse getIssue(String issue, int currentPage, int showCount)throws LotteryApiException;
 
 
-    public JSONObject getCurrentIssue(Integer gameCode)throws LotteryException;
+    public ResultResponse getCurrentIssue(Integer gameCode)throws LotteryApiException;
 
 
-    public JSONObject getLotteryListByCustomerId(String customerId, int currentPage, int showCount)throws LotteryException;
+    public ResultResponse getLotteryListByCustomerId(String customerId, int currentPage, int showCount)throws LotteryApiException;
 
 
-    public JSONObject getLotteryListByOrderNo(int currentPage, int showCount, String orderNo)throws LotteryException;
+    public ResultResponse getLotteryListByOrderNo(int currentPage, int showCount, String orderNo)throws LotteryApiException;
 
 
-    public JSONObject getAccountBalance()throws LotteryException;
+    public ResultResponse getAccountBalance()throws LotteryApiException;
 
 
-    public JSONObject encashToAccount(int amount, String customerId)throws LotteryException;
+    public ResultResponse encashToAccount(int amount, String customerId)throws LotteryApiException;
 
 
-    public JSONObject getCustomerWinBalance(String customerId)throws LotteryException;
+    public ResultResponse getCustomerWinBalance(String customerId)throws LotteryApiException;
 
 
-    public JSONObject createAdvanceToken(String extra, String customerId, String bindIP, int amount, String retcallUrl)throws LotteryException;
+    public ResultResponse createAdvanceToken(String extra, String customerId, String bindIP, int amount, String retcallUrl)throws LotteryApiException;
 
 
-    public JSONObject getWithdrawalList(String customerId, int currentPage, int showCount)throws LotteryException;
+    public ResultResponse getWithdrawalList(String customerId, int currentPage, int showCount)throws LotteryApiException;
 
-    public JSONObject getAccountDetail(int type)throws LotteryException;
+    public ResultResponse getAccountDetail(int type)throws LotteryApiException;
 }

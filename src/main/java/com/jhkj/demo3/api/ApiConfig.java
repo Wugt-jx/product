@@ -7,10 +7,12 @@ package com.jhkj.demo3.api;
 public class ApiConfig {
 
     private String appId;
+    private String securekey;
     private String signkey;
 
-    public ApiConfig(String appId, String signkey) {
+    public ApiConfig(String appId, String securekey, String signkey) {
         this.appId = appId;
+        this.securekey = securekey;
         this.signkey = signkey;
     }
 
@@ -32,4 +34,14 @@ public class ApiConfig {
     public void setSignkey(String signkey) {
         this.signkey = signkey;
     }
+
+    public String getSecurekey() {
+        return securekey;
+    }
+
+    public void setSecurekey(String securekey) {
+        this.securekey = securekey;
+    }
+
+
 }

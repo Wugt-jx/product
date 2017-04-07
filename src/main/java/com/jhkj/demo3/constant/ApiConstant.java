@@ -4,8 +4,9 @@ package com.jhkj.demo3.constant;
  * Created by wgt on 2017/3/28.
  */
 public class ApiConstant {
+
     public static final String HTTP_URL="http://cgi-test.lingqiancai.cc";
-    public static final String HTTP_GETGISN_URL="/cgi-api/v1/getSignKey";
+    public static final String HTTP_GETSIGN_URL="/cgi-api/v1/getSignKey";
     public static final String HTTP_CREATELOTTERYEX_URL="/cgi-api/v1/createLotteryEx";
     public static final String HTTP_GETAWARDINFOEX_URL="/cgi-api/v1/getAwardInfoEx";
     public static final String HTTP_GETISSUE_URL="/cgi-api/v1/getIssue";
@@ -18,4 +19,6 @@ public class ApiConstant {
     public static final String HTTP_CREATEADVANCETOKEN_URL="/pay/createAdvanceToken";
     public static final String HTTP_GETWITHDRAWALLIST_URL="/pay/getWithdrawalList";
     public static final String HTTP_GETACCOUNTDETAIL_URL="/cgi-api/v1/getAccountDetail";
+
+    public static final String CHARSET = "UTF-8";
 }

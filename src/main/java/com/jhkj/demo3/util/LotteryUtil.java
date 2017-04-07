@@ -1,6 +1,8 @@
 package com.jhkj.demo3.util;
 
 import com.xiaoleilu.hutool.util.SecureUtil;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.util.*;
 
@@ -8,6 +10,8 @@ import java.util.*;
  * Created by wgt on 2017/3/27.
  */
 public class LotteryUtil {
+
+    private static Log log= LogFactory.getLog(LotteryUtil.class);
 
     /**
      * 获取时间戳
@@ -42,18 +46,15 @@ public class LotteryUtil {
 
         Set<String>keys=params.keySet();
         List<String> paramskey=orderKey(keys);
-        for (String str:paramskey){
-            System.out.println(str);
-        }
+
         StringBuilder sb_sign=new StringBuilder();
         for(int i=0;i<paramskey.size();i++){
             sb_sign.append(paramskey.get(i)+"="+params.get(paramskey.get(i)).toString()+"&");
         }
         sb_sign.append("key="+signKey);
-
-        System.out.println(sb_sign.toString());
         String sign = SecureUtil.md5(sb_sign.toString(),"utf-8").toUpperCase();
-        System.out.println(sign);
+
+        log.info("create sign:"+sign);
         params.put("sign",sign);
         return params;
     }
@@ -90,7 +91,6 @@ public class LotteryUtil {
      */
     private static boolean isMoreThan(String pre, String next){
         if(null == pre || null == next || "".equals(pre) || "".equals(next)){
-            System.out.println("字符串比较数据不能为空！");
             return false;
         }
 
