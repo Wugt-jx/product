@@ -1,10 +1,12 @@
 package com.jhkj.demo2;
 
-import com.alibaba.fastjson.JSONObject;
 import com.jhkj.demo3.api.ApiConfig;
-import com.jhkj.demo3.api.ILotteryApi;
 import com.jhkj.demo3.api.LotteryApi;
+import com.jhkj.demo3.domain.*;
+import com.jhkj.demo3.response.*;
 import junit.framework.TestCase;
+
+import java.util.List;
 
 
 /**
@@ -12,56 +14,124 @@ import junit.framework.TestCase;
  */
 public class LotteryApiTest extends TestCase {
 
-    ApiConfig apiConfig=new ApiConfig("12345678912","11589ab946eb6a43336ac035d6f51080","");
-    ILotteryApi lotteryApi=new LotteryApi(apiConfig);
+    ApiConfig apiConfig=new ApiConfig("12345678912","4444325gdfgwer545df","10ed4f639873ccafdd2e25471231b614");
+    LotteryApi lotteryApi=new LotteryApi(apiConfig);
 
-    public void testrew() throws Exception {
+    /*public void testrew() throws Exception {
         System.out.println("dasvh");
-    }
+    }*/
 
 
 
     /*public void testGetSignKey() throws Exception {
-        JSONObject jsonObject=lotteryApi.getSignKey();
-        System.out.println(jsonObject);
+        ResultResponse<GetSignKeyResponse>response=lotteryApi.getSignKey();
+        System.out.println(response.getCode());
+        System.out.println(response.getMsg());
+        GetSignKeyResponse datas=response.getData();
+        System.out.println(datas.getKey());
     }*/
 
 
     //PASS
-    /*public void testCreateLotteryEx() throws Exception {
-        JSONObject jsonObject=lotteryApi.createLotteryEx(1,200,"wdsadasgtqqqq","gdvkaug");
-        System.out.println(jsonObject);
+   /* public void testCreateLotteryEx() throws Exception {
+        ResultResponse<CreateLotteryExResponse>response=lotteryApi.createLotteryEx(1,100,"wgt","klobfa");
+        System.out.println(response.getCode());
+        System.out.println(response.getMsg());
+        CreateLotteryExResponse data=response.getData();
+        System.out.println(data.getCustomerId());
+        System.out.println(data.getOrderNo());
+        List<CreateLotteryEx_Lotterys> lotterys=data.getLotterys();
+        for (CreateLotteryEx_Lotterys lottery:lotterys){
+            System.out.println(lottery.getAmount());
+            System.out.println(lottery.getFlowid());
+            System.out.println(lottery.getGameType());
+            System.out.println(lottery.getIssue());
+            System.out.println(lottery.getMulti());
+            System.out.println(lottery.getSeqNo());
+            System.out.println(lottery.getVoteNums());
+            System.out.println(lottery.getVoteType());
+        }
     }*/
 
     //PASS
     public void testgetCurrentIssue() throws Exception {
-        JSONObject result=lotteryApi.getCurrentIssue(201);
-        System.out.println(result.toString());
+       ResultResponse<GetCurrentIssueResponse>response =lotteryApi.getCurrentIssue(201);
+        System.out.println(response.getCode());
+        System.out.println(response.getMsg());
+        GetCurrentIssueResponse data=response.getData();
+        List<CurrentIssue_Issue>issue=data.getIssue();
+        System.out.println(issue);
     }
+
 
    // PASS
     /*public void testGetIssue() throws Exception {
-        JSONObject jsonObject=lotteryApi.getIssue("2017002",1,10);
-        System.out.println(jsonObject.toString());
+        ResultResponse<GetIssueResponse> response=lotteryApi.getIssue(null,1,10);
+        System.out.println(response.getCode());
+        System.out.println(response.getMsg());
+        GetIssueResponse data=response.getData();
+        List<GetIssue_Issue>issues=data.getIssues();
+        for (GetIssue_Issue issue:issues){
+            System.out.println(issue.getAwardTime());
+            System.out.println(issue.getBeginTime());
+            System.out.println(issue.getEndTime());
+            System.out.println(issue.getIssue());
+            System.out.println(issue.getStatus());
+            System.out.println(issue.getLotteryNums());
+            System.out.println(issue.getPool());
+        }
     }*/
 
     // 因为未返还预期数据，测试结果未知
     /*public void testgetAwardInfoEx() throws Exception {
-        JSONObject jsonObject=lotteryApi.getAwardInfoEx(null,1,10);
-        System.out.println(jsonObject.toString());
+        ResultResponse<GetAwardInfoExResponse>response=lotteryApi.getAwardInfoEx("2016082",1,5);
+        System.out.println(response.getCode());
+        System.out.println(response.getMsg());
+        GetAwardInfoExResponse data=response.getData();
+        List<GetAwardInfoEx_Lottery>lotterys=data.getLotterys();
+        for (GetAwardInfoEx_Lottery lottery : lotterys){
+            System.out.println(lottery.getAmount());
+            System.out.println(lottery.getCustomerId());
+            System.out.println(lottery.getFlowid());
+            System.out.println(lottery.getGameType());
+            System.out.println(lottery.getIssue());
+            System.out.println(lottery.getMulti());
+            System.out.println(lottery.getOrderNo());
+            System.out.println(lottery.getSeqNo());
+            System.out.println(lottery.getVoteNums());
+            System.out.println(lottery.getVoteType());
+            System.out.println(lottery.getLotteryNums());
+        }
     }*/
 
 
     //PASS
-    /*public void testGetLotteryListByCustomerId() throws Exception {
-        JSONObject jsonObject=lotteryApi.getLotteryListByCustomerId("wdsadasgtqqqq",1,5);
-        System.out.println(jsonObject);
-    }*/
+    public void testGetLotteryListByCustomerId() throws Exception {
+        System.out.println(System.currentTimeMillis());
+        ResultResponse<GetLotteryListResponse>response=lotteryApi.getLotteryListByCustomerId("wgt",1,1);
+        System.out.println(response.getCode());
+        System.out.println(response.getMsg());
+        GetLotteryListResponse data=response.getData();
+        List<GetLotteryList_Lottery>lotterys=data.getLotterys();
+        for (GetLotteryList_Lottery lottery:lotterys){
+            System.out.println(lottery.getCreateTime());
+            System.out.println(lottery.getAmount());
+            System.out.println(lottery.getGameType());
+            System.out.println(lottery.getIssue());
+            System.out.println(lottery.getMulti());
+            System.out.println(lottery.getSeqNo());
+            System.out.println(lottery.getVoteNums());
+            System.out.println("voteType="+lottery.getVoteType());
+            System.out.println(lottery.getLotteryNums());
+            System.out.println(lottery.getPrize());
+            System.out.println(lottery.getGrade());
+        }
+        System.out.println(System.currentTimeMillis());
+    }
 
     //PASS
     /*public void testGetLotteryListByOrderNo() throws Exception {
-        JSONObject jsonObject=lotteryApi.getLotteryListByOrderNo(1,10,"fhdafgjhfb");
-        System.out.println(jsonObject.toString());
+
     }*/
 
     //PASS
@@ -90,10 +160,9 @@ public class LotteryApiTest extends TestCase {
     }*/
 
     //获取提现记录(404）
-    /*public void testGetWithdrawalList() throws Exception {
-        JSONObject jsonObject = lotteryApi.getWithdrawalList("wgtqqqq", 1, 10);
-        System.out.println(jsonObject);
-    }*/
+    public void testGetWithdrawalList() throws Exception {
+        ResultResponse<GetWithdrawalListResponse> response = lotteryApi.getWithdrawalList("wgtqqqq", 1, 10);
+    }
 
     //获取账号出入明细
    /* public void testGetAccountDetail() throws Exception {

@@ -9,9 +9,9 @@ public class ResultResponse<T extends Object> implements Serializable {
 
     private static final long serialVersionUID = 2324268540348642124L;
 
-    private String code;
-    private String msg;
-    private T data;
+    private String code;    //响应头
+    private String msg;     //响应信息
+    private T  data;        //响应数据
 
     public ResultResponse() {
     }

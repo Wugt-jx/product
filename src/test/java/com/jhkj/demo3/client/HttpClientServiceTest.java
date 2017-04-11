@@ -7,8 +7,7 @@ import junit.framework.TestCase;
  * Created by wgt on 2017/4/5.
  */
 public class HttpClientServiceTest extends TestCase {
-/*
-    IHttpClientService httpClientService=new HttpClientService();
+/*    IHttpClientService httpClientService=new HttpClientService();
 
     public void testExecute() throws Exception {
         JSONObject jsonObject=httpClientService.execute("https://www.baidu.com",null);

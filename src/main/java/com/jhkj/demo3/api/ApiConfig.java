@@ -6,9 +6,9 @@ package com.jhkj.demo3.api;
  */
 public class ApiConfig {
 
-    private String appId;
-    private String securekey;
-    private String signkey;
+    private String appId;       //用户Id
+    private String securekey;   //用户私钥
+    private String signkey;     //签名钥
 
     public ApiConfig(String appId, String securekey, String signkey) {
         this.appId = appId;

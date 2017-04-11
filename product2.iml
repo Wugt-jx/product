@@ -18,5 +18,7 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.3.2" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.23" level="project" />
     <orderEntry type="library" name="Maven: com.xiaoleilu:hutool:2.14.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:1.7.7" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-simple:1.7.7" level="project" />
   </component>
 </module>

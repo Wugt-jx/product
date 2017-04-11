@@ -20,6 +20,7 @@ public class GetAwardInfoEx_Lottery implements Serializable {
     private Integer voteType;
     private String customerId;
 
+
     public GetAwardInfoEx_Lottery() {
     }
 

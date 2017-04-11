@@ -8,40 +8,40 @@ import com.jhkj.demo3.response.ResultResponse;
  */
 public interface ILotteryApi {
 
-    public ResultResponse getSignKey() throws LotteryApiException;
+    public ResultResponse getSignKey();
 
 
-    public ResultResponse createLotteryEx(int quantity, int amount, String customerId, String orderNo) throws LotteryApiException;
+    public ResultResponse createLotteryEx(int quantity, int amount, String customerId, String orderNo) ;
 
 
-    public ResultResponse getAwardInfoEx(String issue, int currentPage, int showCount)throws LotteryApiException;
+    public ResultResponse getAwardInfoEx(String issue, int currentPage, int showCount);
 
 
-    public ResultResponse getIssue(String issue, int currentPage, int showCount)throws LotteryApiException;
+    public ResultResponse getIssue(String issue, int currentPage, int showCount);
 
 
-    public ResultResponse getCurrentIssue(Integer gameCode)throws LotteryApiException;
+    public ResultResponse getCurrentIssue(Integer gameCode);
 
 
-    public ResultResponse getLotteryListByCustomerId(String customerId, int currentPage, int showCount)throws LotteryApiException;
+    public ResultResponse getLotteryListByCustomerId(String customerId, int currentPage, int showCount);
 
 
-    public ResultResponse getLotteryListByOrderNo(int currentPage, int showCount, String orderNo)throws LotteryApiException;
+    public ResultResponse getLotteryListByOrderNo(int currentPage, int showCount, String orderNo);
 
 
-    public ResultResponse getAccountBalance()throws LotteryApiException;
+    public ResultResponse getAccountBalance();
 
 
-    public ResultResponse encashToAccount(int amount, String customerId)throws LotteryApiException;
+    public ResultResponse encashToAccount(int amount, String customerId);
 
 
-    public ResultResponse getCustomerWinBalance(String customerId)throws LotteryApiException;
+    public ResultResponse getCustomerWinBalance(String customerId);
 
 
-    public ResultResponse createAdvanceToken(String extra, String customerId, String bindIP, int amount, String retcallUrl)throws LotteryApiException;
+    public ResultResponse createAdvanceToken(String extra, String customerId, String bindIP, int amount, String retcallUrl);
 
 
-    public ResultResponse getWithdrawalList(String customerId, int currentPage, int showCount)throws LotteryApiException;
+    public ResultResponse getWithdrawalList(String customerId, int currentPage, int showCount);
 
-    public ResultResponse getAccountDetail(int type)throws LotteryApiException;
+    public ResultResponse getAccountDetail(int type);
 }

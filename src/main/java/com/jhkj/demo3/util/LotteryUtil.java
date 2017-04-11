@@ -1,18 +1,18 @@
 package com.jhkj.demo3.util;
 
 import com.xiaoleilu.hutool.util.SecureUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * Created by wgt on 2017/3/27.
  */
 public class LotteryUtil {
 
-    private static Log log= LogFactory.getLog(LotteryUtil.class);
 
+    private static Log logger = new Log(LoggerFactory.getLogger(LotteryUtil.class));
     /**
      * 获取时间戳
      * @return
@@ -45,6 +45,7 @@ public class LotteryUtil {
         params.put("timestamp",getTimeStamp());
 
         Set<String>keys=params.keySet();
+
         List<String> paramskey=orderKey(keys);
 
         StringBuilder sb_sign=new StringBuilder();
@@ -54,11 +55,17 @@ public class LotteryUtil {
         sb_sign.append("key="+signKey);
         String sign = SecureUtil.md5(sb_sign.toString(),"utf-8").toUpperCase();
 
-        log.info("create sign:"+sign);
+        log("create sign:"+sign);
         params.put("sign",sign);
         return params;
     }
 
+
+    public static String log(Object log){
+        logger.i(log.toString());
+        //System.out.println(log);
+        return log.toString();
+    }
 
     /**
      * 排序

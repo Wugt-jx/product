@@ -8,7 +8,6 @@ import java.io.Serializable;
 public class GetLotteryList_Lottery implements Serializable{
 
     private static final long serialVersionUID = -5527235244262825607L;
-
     private Integer amount;
     private String flowId;
     private Integer voteType;

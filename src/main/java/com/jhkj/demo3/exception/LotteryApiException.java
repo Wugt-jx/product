@@ -5,7 +5,7 @@ package com.jhkj.demo3.exception;
  * Created by wgt on 2017/3/28.
  */
 
-public class LotteryApiException extends Exception {
+public class LotteryApiException extends RuntimeException {
 
     public LotteryApiException(String message) {
         super(message);
